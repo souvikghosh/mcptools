@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mcptools"
+version = "0.1.0"
+description = "MCP server exposing financial data tools for AI clients"
+requires-python = ">=3.11"
+license = {text = "MIT"}
+authors = [{name = "Souvik Ghosh", email = "souvik@example.com"}]
+dependencies = [
+    "mcp>=1.0.0",
+    "yfinance>=0.2.31",
+    "feedparser>=6.0.0",
+    "httpx>=0.25.0",
+    "pydantic>=2.5.0",
+    "pydantic-settings>=2.1.0",
+    "python-dotenv>=1.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4.0",
+    "pytest-asyncio>=0.23.0",
+    "ruff>=0.1.0",
+]
+
+[tool.setuptools.packages.find]
+include = ["mcptools*"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
