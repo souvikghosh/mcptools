@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "mcptools": {
+      "command": "python",
+      "args": ["-m", "mcptools.server"],
+      "env": {}
+    }
+  }
+}
